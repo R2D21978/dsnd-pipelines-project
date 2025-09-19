@@ -1,55 +1,59 @@
-# README Template
 
-Below is a template provided for use when building your README file for students.
 
 # Project Title
 
-Project description goes here.
+Reviews Classification Project  
 
 ## Getting Started
 
-Instructions for how to get a copy of the project running on your local machine.
-
-### Dependencies
-
-```
-Examples here
+To run this project locally:  
+1. Clone the repo or download as ZIP.  
+2. Make sure you have Python (3.11 recommended).  
+3. Install the required libraries.  
 ```
 
 ### Installation
 
-Step by step explanation of how to get a dev environment running.
+```bash
+# 1. Install packages
+pip install pandas numpy scikit-learn spacy
 
-List out the steps
+# 2. Download spaCy language model
+python -m spacy download en_core_web_sm
 
-```
-Give an example here
-```
+# 3. Run the script
+python main.py
+
 
 ## Testing
 
-Explain the steps needed to run any automated tests
+Run the whole script – it will print Accuracy: at the end.
+If accuracy looks good, then the model is working.
 
 ### Break Down Tests
 
-Explain what each test does and why
-
-```
-Examples here
-```
+Train-Test Split – checks how well the model performs on unseen data (20% of dataset).
+RandomizedSearchCV – tries different RandomForest parameters and finds the best combination.
 
 ## Project Instructions
 
-This section should contain all the student deliverables for this project.
+
+Load data from reviews.csv.
+Split data into X (features) and Y (target label).
+Preprocess features (numeric, categorical, and text).
+Train a RandomForest model on training data.
+Test the model on test data.
+(Optional) Run parameter search to improve model performance.
 
 ## Built With
 
-* [Item1](www.item1.com) - Description of item
-* [Item2](www.item2.com) - Description of item
-* [Item3](www.item3.com) - Description of item
-
+Python 3.11 – programming language
+pandas – loading and cleaning data
+scikit-learn – pipeline, model, parameter search
+spaCy – lemmatization and stopword removal
+TfidfVectorizer – converting text to numerical features
 Include all items used to build project.
 
 ## License
 
-[License](LICENSE.txt)
+(LICENSE.txt)
